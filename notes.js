@@ -33,9 +33,15 @@
 // - isNaN is a function that checks if something is not a number.
 
 
+
+// - It's typically a practice for any of your global variables that are constants to be written in 
+// all capitals
+// - Snake Case uses an underscore as a space separator and all capitals as it's convention
+//      EXAMPLE from project.js: SYMBOLS_COUNT
+
+
+
 // 
-
-
 
 
 
