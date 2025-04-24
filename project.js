@@ -15,7 +15,7 @@ const prompt = require("prompt-sync")();
 const ROWS = 3;
 const COLS = 3;     // Each column represents a reel
 
-const SYMBOLS_COUNT = {     // This object represents each of the symbols that you can possibly have in each reel (column) and how many of each of them there are.
+const SYMBOLS_COUNT = {     // This object represents each of the symbols that you can possibly have in each reel (column) and how many of each of them there are
     A: 2,
     B: 4,
     C: 6,
@@ -72,12 +72,15 @@ const getBet = (balance, lines) => {
 const spin = () => {
     const symbols = [];
     for (const [symbol, count] of Object.entries(SYMBOLS_COUNT)) {
-
+        for (let i = 0; i < count; i++) {
+            symbols.push(symbol);
+        }
     }
 }
 
 let balance = deposit();
 const numberOfLines = getNumberOfLines();
 const bet = getBet(balance, numberOfLines);
+
 
 

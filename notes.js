@@ -41,14 +41,19 @@
 
 
 
-// 
+// - The spin function in the project.js file takes all of the possible symbols that can be used inside 
+// of a list (array) and then it randomly selects them out of the array and removes them from the array 
+// every single time that you use them while you're generating each reel (each individual column).
+// - The symbols const is an empty array inside the spin function and it is used to generate an array 
+// that contains all of the possible symbols that you can have.
 
 
 
+// NOTE: An array, in JavaScript, is what's known as a reference data type, which means that you can manipulate 
+// what's inside of the array without changing the reference to the array itself.
 
 
 
-
-
+// -
 
 
