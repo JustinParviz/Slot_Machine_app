@@ -102,7 +102,20 @@ const transpose = (reels) => {
         }
     }
 
-    return rows
+    return rows;
+};
+
+const printRows = (rows) => {
+    for (const row of rows) {
+        let rowString = "";
+        for (const [i, symbol] of row.entries()) {
+            rowString += symbol;
+            if (i != row.length - 1) {
+                rowString += " | ";
+            }
+        }
+        console.log(rowString);
+    }
 };
 
 
@@ -111,8 +124,7 @@ const numberOfLines = getNumberOfLines();
 const bet = getBet(balance, numberOfLines);
 const reels = spin();
 const rows = transpose(reels);
-console.log(reels);
-console.log(rows);
+printRows(rows);
 
 
 
