@@ -32,7 +32,7 @@ const SYMBOL_VALUES = {     // This object is the multiplier or the value of eac
 
 const deposit = () => {
     while (true) {
-        const depositAmount = prompt("Enter a deposit amount: ");
+        const depositAmount = prompt("Enter a deposit amount: $");
         const numberDepositAmount = parseFloat(depositAmount);
 
         if (isNaN(numberDepositAmount) || numberDepositAmount <= 0) {
@@ -58,7 +58,7 @@ const getNumberOfLines = () => {
 
 const getBet = (balance, lines) => {
     while (true) {
-        const bet = prompt("Enter the bet per line: ");
+        const bet = prompt("Enter the bet per line: $");
         const numberBet = parseFloat(bet);
 
         if (isNaN(numberBet) || numberBet <= 0 || numberBet > balance / lines) {
@@ -145,7 +145,7 @@ const game = () => {
     let balance = deposit();
 
     while (true) {
-        console.log("You have a balance of $" + balance);
+        console.log(`You have a balance of $${balance}`);
         const numberOfLines = getNumberOfLines();
         const bet = getBet(balance, numberOfLines);
         balance -= bet * numberOfLines;
@@ -169,8 +169,6 @@ const game = () => {
 
 
 game();
-
-
 
 
 
