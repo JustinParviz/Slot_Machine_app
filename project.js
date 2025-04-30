@@ -123,6 +123,7 @@ const getWinnings = (rows, bet, lines) => {
 
     for (let row = 0; row < lines; row++) {
         const symbols = rows[row];
+        console.log(`Checking row ${row + 1}:`, symbols);
         let allSame = true;
 
         for (const symbol of symbols) {
