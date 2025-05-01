@@ -58,11 +58,11 @@ const getNumberOfLines = () => {
 
 const getBet = (balance, lines) => {
     while (true) {
-        const bet = prompt("Enter the bet per line: $");
+        const bet = prompt("Enter the Bet per line: $");
         const numberBet = parseFloat(bet);
 
         if (isNaN(numberBet) || numberBet <= 0 || numberBet > balance / lines) {
-            console.log("Invalid bet, please try again.");
+            console.log("Invalid Bet, please try again.");
         } else {
             return numberBet;
         }
@@ -123,7 +123,7 @@ const getWinnings = (rows, bet, lines) => {
 
     for (let row = 0; row < lines; row++) {
         const symbols = rows[row];
-        console.log(`Checking row ${row + 1}:`, symbols);
+        console.log(`Checking row ${row + 1}:`, symbols);   // Decided to leave this console.log so the user can see what rows are being bet on
         let allSame = true;
 
         for (const symbol of symbols) {
@@ -146,7 +146,7 @@ const game = () => {
     let balance = deposit();
 
     while (true) {
-        console.log(`You have a balance of $${balance}`);
+        console.log(`You have a Balance of $${balance}`);
         const numberOfLines = getNumberOfLines();
         const bet = getBet(balance, numberOfLines);
         balance -= bet * numberOfLines;
@@ -155,7 +155,7 @@ const game = () => {
         printRows(rows);
         const winnings = getWinnings(rows, bet, numberOfLines);
         balance += winnings;
-        console.log("You won, $" + winnings.toString());
+        console.log("You won: $" + winnings.toString());
 
         if (balance <= 0) {
             console.log("You ran out of money!");
@@ -170,6 +170,5 @@ const game = () => {
 
 
 game();
-
 
 
